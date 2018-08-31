@@ -1,15 +1,13 @@
 <h1>Student Form</h1>
 
-
-<form action="<%=students_path%>" method="post">
+<%= form_tag("/students", :id => 'Student Form') do %>
 <label>First Name:</label><br>
-<input type="text" id="first_name" name="student[first_name]"><br>
+<%= text_field_tag :'student[first_name]' %>
+<!-- #generating an input field  -->
 
 <label>Last Name:</label><br>
-<input type="text" id="last_name" name="student[last_name]"><br>
+<%= text_field_tag :'student[last_name]' %>
 
-
-<%=hidden_field_tag :authenticity_token, form_authenticity_token %>
-<button type="button">Submit Student</button>
-
-</form>
+<!-- <%=hidden_field_tag :authenticity_token, form_authenticity_token %> -->
+<button type="submit">Submit Student</button>
+<%end%>
